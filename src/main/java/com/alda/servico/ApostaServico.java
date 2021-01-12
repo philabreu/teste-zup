@@ -5,6 +5,7 @@ import com.alda.repositorio.ApostaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -25,10 +26,12 @@ public class ApostaServico {
                 random.nextInt(10),
                 random.nextInt(10)));
 
+        aposta.setData(LocalDate.now());
+
         return repositorio.save(aposta);
     }
 
     public List<Aposta> listarApostas(String email) {
-        return repositorio.findByEmail(email);
+        return repositorio.findByEmailOrderByData(email);
     }
 }

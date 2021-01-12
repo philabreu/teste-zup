@@ -39,7 +39,6 @@ public class ApostaControlador {
         }
 
         List<Aposta> apostas = servico.listarApostas(email);
-        return ResponseEntity.status(HttpStatus.CREATED).body(apostas);
+        return ResponseEntity.status(HttpStatus.OK).body(apostas);
     }
-
 }
