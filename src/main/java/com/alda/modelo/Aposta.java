@@ -1,10 +1,10 @@
 package com.alda.modelo;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
-import java.util.List;
 
 @Table(name = "aposta")
 @Entity
@@ -15,7 +15,7 @@ public class Aposta {
 
     @NotEmpty
     @Column(name = "numeros")
-    private List<Integer> numeros;
+    private Integer numero;
 
     @NotBlank
     @Column(name = "email")
@@ -24,12 +24,12 @@ public class Aposta {
     @Column(name = "data_criacao")
     private LocalDate data;
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 
-    public void setNumeros(List<Integer> numeros) {
-        this.numeros = numeros;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setData(LocalDate data) {
