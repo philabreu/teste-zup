@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ApostaRepositorio extends JpaRepository<Aposta, Long> {
-    List<Aposta> findByEmailOrderByData(String email);
+    List<Aposta> findByEmailOrderByDataDesc(String email);
 }

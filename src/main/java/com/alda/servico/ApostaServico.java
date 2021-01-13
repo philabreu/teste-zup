@@ -28,6 +28,6 @@ public class ApostaServico {
     }
 
     public List<Aposta> listarApostas(String email) {
-        return repositorio.findByEmailOrderByData(email);
+        return repositorio.findByEmailOrderByDataDesc(email);
     }
 }
